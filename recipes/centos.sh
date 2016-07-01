@@ -19,13 +19,11 @@ script_runner=$(whoami)
 railsready_path=$7
 log_file=$8
 
-epel_repo_url="http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
-
 #echo "vars set: $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsready_path $log_file"
 
 # Add the EPEL repo if centos
 echo -e "\n=> Adding EPEL repo..."
-sudo rpm -Uvh $epel_repo_url
+sudo yum install -y epel-release
 echo "==> done..."
 
 # Install build tools
